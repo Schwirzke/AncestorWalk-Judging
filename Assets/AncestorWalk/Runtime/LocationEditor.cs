@@ -15,6 +15,12 @@ namespace AncestorWalk
         bool includePhoto;PhotoRecord scenePhoto;GameObject photoCheck;TextMesh photoLabel;
         Collider[] panelColliders=Array.Empty<Collider>();
         public bool IsOpen=>panel!=null;
+        internal void SetSetupSuspended(bool suspended)
+        {
+            if(panel==null)return;
+            if(suspended){nativeInput?.DeactivateInputField();detailsInput?.DeactivateInputField();}
+            panel.SetActive(!suspended);
+        }
         public void Open(AncestorGallery owner,Person p,int selected)
         {
             Close();includePhoto=false;scenePhoto=null;gallery=owner;person=p;year=selected;page=0;value=gallery.Locations(p.Id).At(p,year);selectAll=value.Length>0;gallery.Overlay?.CloseGuide();
@@ -133,6 +139,8 @@ namespace AncestorWalk
             {
                 try
                 {
+                    // Request setup before saving or closing the user's unfinished location draft.
+                    if(key=="save")DevelopmentAI.Resolve();
                     if(key=="save"&&includePhoto&&scenePhoto==null){message.text="Choose a photo or uncheck Add photo to scene.";return;}
                     details=SceneYearDetails.Normalize(details);
                     var photo=key=="save"&&includePhoto?SceneReference.FromPhoto(scenePhoto,year,value):null;

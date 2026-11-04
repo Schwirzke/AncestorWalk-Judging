@@ -22,18 +22,23 @@ namespace AncestorWalk
     {
         public const string BaseUrl="https://api.meta.ai/v1/",Image="muse-image-1.0",Spark="muse-spark-1.3",Voice="muse-voice-transcribe-1.0";
         static string sessionKey;public static bool Configured=>!string.IsNullOrEmpty(sessionKey);
+        static bool keyRejected;static int keyRevision;
+        public static bool KeyReady=>Configured&&!keyRejected;
+        public static event Action SetupRequired;
         public static int ActiveRequests{get;private set;}
 #if UNITY_EDITOR
         public static Func<string,byte[],MetaReply> TestReply;
 #endif
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void Reset(){sessionKey=null;ActiveRequests=0;}
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void Reset(){sessionKey=null;keyRejected=false;keyRevision=0;SetupRequired=null;ActiveRequests=0;}
         public static string ValidateKey(string key)
         {
             key=(key??"").Trim();if(key.Length<8||key.Length>=4096||key.Any(c=>c<33||c>126))throw new InvalidOperationException("Enter a valid Meta Model API key without spaces.");return key;
         }
-        public static void UseKey(string key){sessionKey=ValidateKey(key);}
-        public static void ForgetKey(){sessionKey=null;}
-        public static void RequireKey(){if(!Configured)throw new InvalidOperationException("Open AI Setup and enter your Meta API key.");}
+        public static void UseKey(string key){sessionKey=ValidateKey(key);keyRejected=false;keyRevision++;}
+        public static void ForgetKey(){sessionKey=null;keyRejected=false;keyRevision++;}
+        public static void RequireKey(){if(!KeyReady){SetupRequired?.Invoke();throw new InvalidOperationException("Open AI Setup and enter a valid Meta API key.");}}
+        static void CheckAuthentication(long http,bool session,int revision)
+        {if(session&&revision==keyRevision&&(http==401||http==403)){keyRejected=true;SetupRequired?.Invoke();}}
         public static byte[] JsonBytes(JObject json)=>Encoding.UTF8.GetBytes(json.ToString(Formatting.None));
         static readonly uint[] CrcTable=BuildCrc();
         static uint[] BuildCrc(){var table=new uint[256];for(uint n=0;n<256;n++){uint c=n;for(int k=0;k<8;k++)c=(c&1)!=0?0xedb88320u^(c>>1):c>>1;table[n]=c;}return table;}
@@ -63,9 +68,10 @@ namespace AncestorWalk
         {
             if(path!="models"&&path!="responses"&&path!="images/generations"&&path!="images/edits"&&path!="asr/transcribe")throw new InvalidOperationException("Unsupported Meta endpoint.");
             string key=candidate??sessionKey;
-            if(string.IsNullOrEmpty(key)){reply.Error="Open AI Setup and enter your Meta API key.";yield break;}
+            bool session=candidate==null;int revision=keyRevision;
+            if(string.IsNullOrEmpty(key)||session&&!KeyReady){SetupRequired?.Invoke();reply.Error="Open AI Setup and enter a valid Meta API key.";yield break;}
 #if UNITY_EDITOR
-            if(TestReply!=null){var fake=TestReply(path,body);yield return null;reply.Json=fake.Json;reply.Http=fake.Http;reply.Error=fake.Error;reply.RetryAfter=fake.RetryAfter;yield break;}
+            if(TestReply!=null){var fake=TestReply(path,body);yield return null;reply.Json=fake.Json;reply.Http=fake.Http;reply.Error=fake.Error;reply.RetryAfter=fake.RetryAfter;CheckAuthentication(reply.Http,session,revision);yield break;}
 #endif
             using var request=new UnityWebRequest(BaseUrl+path,body==null?"GET":"POST"){downloadHandler=new DownloadHandlerBuffer(),timeout=timeout,redirectLimit=0};
             request.SetRequestHeader("Authorization","Bearer "+key);key=null;candidate=null;
@@ -76,6 +82,7 @@ namespace AncestorWalk
                 var operation=request.SendWebRequest();
                 while(!operation.isDone){if(request.downloadedBytes>(ulong)maxBytes){request.Abort();reply.Error="Meta response exceeded the supported size.";yield break;}yield return null;}
                 reply.Http=request.responseCode;
+                CheckAuthentication(reply.Http,session,revision);
                 if(float.TryParse(request.GetResponseHeader("Retry-After"),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out float delay))reply.RetryAfter=Mathf.Clamp(delay,1,300);
                 if(request.result!=UnityWebRequest.Result.Success){reply.Error=DetailedError(reply.Http,request.downloadHandler.data);yield break;}
                 byte[] raw=request.downloadHandler.data;if(raw==null||raw.Length>maxBytes){reply.Error="Meta returned an oversized response.";yield break;}

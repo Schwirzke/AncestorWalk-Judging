@@ -12,6 +12,8 @@ interpretation, not archival evidence or proof of an ancestor's lived experience
 Read the [judge instructions](Docs/JudgeInstructions.md) for installation,
 controls, API-key setup and a complete sample journey.
 
+Watch the [three-minute demo](https://youtu.be/vuxJsWuUHrw).
+
 Open this project with **Unity 6000.6.2f1**, open
 `Assets/AAA/WordChain.unity`, and press Play. Install Git LFS and run
 `git lfs pull` before opening Unity so the fictional demo media is downloaded.
@@ -21,6 +23,9 @@ people, 74 bundled historical panoramas and eight fictional portraits. These
 saved scenes work without an API key. Use **Copy demo to edit** for live tests.
 
 For live AI, enter your own Meta Model API key in **Settings → Scenes → AI Setup**.
+AI Setup opens at startup without a valid session key; close it to browse saved
+scenes. It opens again when an AI action needs a key. Quest starts in full VR;
+passthrough is available from the room toggle.
 Requests use HTTPS directly from Unity. The key is session-only. No credentials,
 private family archives, private photographs, author scene caches, local backend,
 or development Git history are supplied. Optional developer helper source and

@@ -37,7 +37,7 @@ namespace AncestorWalk
         public static void Placeholder(TMP_InputField input,string value)
         {var label=Text(input.textViewport,"Placeholder",value,input.textComponent.fontSize,new Color(.7f,.75f,.78f));label.alignment=input.textComponent.alignment;input.placeholder=label;}
         public static void Focus(TMP_InputField input,bool all=false)
-        {if(input==null)return;if(!input.isFocused)input.ActivateInputField();if(all)input.GetComponent<NativeTextInput>().StartCoroutine(input.GetComponent<NativeTextInput>().SelectAll());}
+        {if(input==null)return;input.ActivateInputField();if(all)input.GetComponent<NativeTextInput>().StartCoroutine(input.GetComponent<NativeTextInput>().SelectAll());}
         IEnumerator SelectAll(){yield return null;if(field!=null&&field.isActiveAndEnabled){field.selectionStringAnchorPosition=0;field.selectionStringFocusPosition=field.text.Length;field.ForceLabelUpdate();}}
         public static void Insert(TMP_InputField input,string text)
         {if(input==null)return;foreach(char c in text)input.ProcessEvent(new Event{type=EventType.KeyDown,character=c});input.ForceLabelUpdate();}
@@ -50,7 +50,7 @@ namespace AncestorWalk
             var canvas=input.GetComponentInParent<Canvas>();var camera=canvas.worldCamera!=null?canvas.worldCamera:Camera.main;
             var result=new RaycastResult{gameObject=input.gameObject,module=canvas.GetComponent<GraphicRaycaster>(),worldPosition=ray.GetPoint(d),worldNormal=-rect.forward,distance=d};
             var data=new PointerEventData(EventSystem.current){button=PointerEventData.InputButton.Left,position=camera.WorldToScreenPoint(result.worldPosition),pointerPressRaycast=result,pointerCurrentRaycast=result};
-            EndPointer();input.OnPointerDown(data);rayInput=input;rayPointer=data;rayPointer.pressPosition=data.position;
+            EndPointer();input.OnPointerDown(data);input.OnPointerClick(data);rayInput=input;rayPointer=data;rayPointer.pressPosition=data.position;
         }
         public static void UpdatePointer(Ray ray,bool vr,bool held)
         {

@@ -17,7 +17,8 @@ namespace AncestorWalk
         static void Reset(){cached=null;checkAfter=0;}
         public static bool TryConnection(out SceneServiceConnection connection)
         {
-            connection=null;if(!Enabled||MetaApi.Configured)return false;
+            // Headset sessions require the user's tested key. The local helper remains an Editor tool.
+            connection=null;if(!Enabled||!Application.isEditor||MetaApi.Configured)return false;
             if(cached!=null){connection=cached;return true;}
             if(Time.realtimeSinceStartup<checkAfter)return false;checkAfter=Time.realtimeSinceStartup+2;
             try{cached=SceneGeneration.ReadConnection();connection=cached;return true;}

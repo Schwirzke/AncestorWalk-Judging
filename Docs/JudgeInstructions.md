@@ -6,6 +6,10 @@ Prepared November 4, 2026 for the Meta AI submission. Use this source checkout
 for the desktop route. A final Quest APK and candidate-build validation remain
 pending.
 
+Watch the [demo video](https://youtu.be/vuxJsWuUHrw). It shows desktop Unity
+capture with fictional records, prerecorded speech, synthetic narration and
+shortened waits identified in the presentation.
+
 ## Install and launch
 
 ### Desktop through Unity Editor
@@ -19,6 +23,9 @@ pending.
 4. Open **Trees → Fictional demo**. The tree is named
    **Hartwell Through Time · fictional**. Fresh installs start with the demo;
    an existing installation may restore its last saved tree instead.
+
+AI Setup opens on launch without a valid session key. Close it for the offline
+journey below; saved scenes do not require a key.
 
 The demo bundle contains about 340 MiB of images/previews. A first import can take
 longer than later launches. A headset, Python service, backend and locally
@@ -59,9 +66,9 @@ timeline. Gold year markers indicate saved scenes. Dragging browses/blends saved
 images and does not request new generation. An intermediate year is not proof
 that a separate image was generated for that year.
 
-Quest passthrough scene opacity defaults to 25%. Adjust **Settings → Scenes →
-Passthrough scene opacity** if the environment is too faint; immersive VR shows
-the full scene.
+Each launch starts in full VR. Use the HUD's room toggle for passthrough.
+Passthrough scene opacity defaults to 25%; adjust **Settings → Scenes →
+Passthrough scene opacity** if the environment is too faint.
 
 ## First journey — no API key required
 
@@ -72,8 +79,7 @@ the full scene.
    each environment and drag through the timeline to see the saved-image blend.
 4. Use **Back** to return to the tree and follow a connection to another generation.
 
-The working project bundles 73 panoramas and eight portraits. Evelyn's Paris
-1945 endpoint is deliberately empty. Generated environments and portraits are
+This judging snapshot bundles 74 panoramas and eight portraits. Generated environments and portraits are
 imaginative reconstructions, not archival family evidence. The built-in demo is
 read-only. Choose **Copy demo to edit** before trying new locations or photo edits;
 the independent copy retains the demo's scenes, portraits and dated moves.
@@ -82,7 +88,9 @@ the independent copy retains the demo's scenes, portraits and dated moves.
 
 1. Have a Meta Model API key with access to the models below and available quota.
    A normal Meta/Quest account alone does not establish model API access.
-2. Open **Settings → Scenes → AI Setup**, paste the key into the masked entry,
+2. AI Setup opens at startup and when an AI action needs a valid key. You can
+   also open **Settings → Scenes → AI Setup**. Select the masked entry to open
+   the Quest keyboard, then type or paste the key,
    then choose **Test & use key**. This checks the model catalog; it does not
    generate an image. Successful catalog access does not guarantee every model's
    availability or remaining generation quota.
@@ -91,10 +99,14 @@ the independent copy retains the demo's scenes, portraits and dated moves.
    assets, builds, PlayerPrefs, scene caches or logs. Closing the panel clears
    its entry box, not the active session key.
 
-New requests use direct HTTPS from Unity to `https://api.meta.ai/v1/`. No developer
-Mac connection is required. An explicitly entered key overrides the optional
-local development helper. Live generation/transcription needs internet access
+New requests use direct HTTPS from Unity to `https://api.meta.ai/v1/`.
+Quest builds use your session key; no local server is required.
+Live generation/transcription needs internet access
 and consumes the key's provider quota; browsing bundled scenes does not.
+
+If Meta rejects session credentials or model access, AI Setup opens again. Test
+a replacement key before retrying. Unfinished location text is retained while
+you enter the key.
 
 | Model ID | Role |
 | --- | --- |

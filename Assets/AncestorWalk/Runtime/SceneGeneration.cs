@@ -336,9 +336,9 @@ namespace AncestorWalk
             // This is temporary UI capture: never change the user's persisted Pause preference.
             if(owner!=null&&((owner.Library?.IsOpen??false)||(owner.AISetup?.IsOpen??false)))return;
 #if UNITY_EDITOR
-            bool directReady=MetaApi.Configured||TestConnection!=null||DevelopmentAI.TryConnection(out _);
+            bool directReady=MetaApi.KeyReady||TestConnection!=null||DevelopmentAI.TryConnection(out _);
 #else
-            bool directReady=MetaApi.Configured||DevelopmentAI.TryConnection(out _);
+            bool directReady=MetaApi.KeyReady||DevelopmentAI.TryConnection(out _);
 #endif
             if(!directReady){if(QueueMessage!="Open AI Setup and enter your Meta API key."){QueueMessage="Open AI Setup and enter your Meta API key.";Signal();}return;}
             if(!Running||Time.realtimeSinceStartup<dispatchAfter)return;

@@ -42,8 +42,8 @@ namespace AncestorWalk
 
         void Start()
         {
-            // Every Quest launch starts in the room, even if the previous session ended in VR.
-            if (Application.platform==RuntimePlatform.Android||XRSettings.isDeviceActive||PlayerPrefs.GetInt(PreferenceKey,0)!=0) SetActive(true);
+            // Every launch starts in full VR; the room remains an explicit HUD toggle.
+            SetActive(false);
         }
 
         public void Toggle() => SetActive(!Active && !Starting);
