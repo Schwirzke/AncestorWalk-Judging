@@ -1,0 +1,7 @@
+All Time symbolic panorama
+Created 2026-10-27 using built-in OpenAI image_gen via the imagegen skill.
+Asset: Assets/AncestorWalk/Resources/AllTimePanorama.png
+This is symbolic artwork, not Meta output or family evidence. Shared offline fallback; never stored as a person/year scene.
+
+Exact generation prompt:
+Use case: stylized-concept. Asset type: Unity VR skybox texture, seamless full spherical 360-degree equirectangular panorama, 2:1 aspect ratio, 4096x2048 if possible. Primary request: 'All Time', a calm symbolic environment representing how all things and time exist at once. Viewer suspended peacefully at the center of an infinite luminous cosmos: interwoven stars, gently branching luminous paths, ethereal landscapes, and subtle architectural traces of ancient, historical and future eras coexisting around the entire horizon. Beautiful contemplative spacious atmosphere, soft gold, indigo, teal, balanced brightness, uncluttered areas for overlay controls. True latitude-longitude projection, 360 longitude by 180 latitude, matching seamless left/right edges and pole-safe zenith/nadir. Horizon centered. No foreground platform, no people, no text, no logos, no borders, no montage frames. A single continuous immersive environment, no apparent motion.

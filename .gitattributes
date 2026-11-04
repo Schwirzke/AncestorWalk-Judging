@@ -1,0 +1,5 @@
+# Fictional bundled demo media only. Existing history is not migrated.
+Assets/StreamingAssets/AncestorWalkDemo/images/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/StreamingAssets/AncestorWalkDemo/previews/*.rgba filter=lfs diff=lfs merge=lfs -text
+Assets/StreamingAssets/AncestorWalkDemo/portraits/*.png filter=lfs diff=lfs merge=lfs -text
+Assets/StreamingAssets/AncestorWalkDemo/portraits/*.jpg filter=lfs diff=lfs merge=lfs -text

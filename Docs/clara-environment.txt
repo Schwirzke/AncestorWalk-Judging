@@ -1,0 +1,23 @@
+Clara environment — original flat preview, 2026-10-26
+
+Generator: built-in OpenAI ImageGen tool (not Meta Muse Image).
+Asset: Assets/AncestorWalk/Resources/ClaraYork1870.png
+Usage: distant scenic backdrop for fictional Clara Hartwell, with real 3D courtyard geometry.
+Historical status: speculative York-inspired scene, no source-verified address or personal history.
+Not a 360-degree panorama, generated mesh, or fully traversable town.
+
+Final generation prompt:
+Use case: historical-scene. Create a photorealistic panoramic environment artwork for a Unity VR family-history prototype. Scene: a quiet residential lane inspired by York, England, around 1870, warm late-afternoon sunlight after light rain, weathered red brick and timber houses, small-paned windows, cobbled lane receding into the distance, subtle chimney haze, muted green foliage, no people. Eye-level view at 1.65 metres. Wide landscape 3:2 composition, generous foreground cobbles, convincing depth, tactile materials, inviting atmosphere. This is speculative period-inspired scenery, not a documentary depiction of any actual ancestor's home. No modern vehicles, electric wires, modern street furniture, signage, lettering, watermark, UI or borders. Intended as a large distant scenic backdrop beyond a small real 3D courtyard; avoid extreme wide-angle distortion.
+
+
+360-degree version — 2026-10-26 (current)
+Generator: built-in OpenAI ImageGen tool (not Meta Muse Image).
+Asset: Assets/AncestorWalk/Resources/ClaraYork1870Panorama.png
+Material: ClaraYork1870Panorama.mat, Skybox/Panoramic, latitude-longitude, full360, mono.
+Actual output: 2048x1024. Import: mipmaps, horizontal repeat, vertical clamp.
+Usage: infinitely distant surrounding scenery; nearby courtyard remains real geometry.
+Historical status: speculative York-inspired reconstruction, fictional ancestor.
+Limitations: monoscopic, no translation parallax in scenery, generation artifacts and headset comfort still require device review.
+
+Final generation prompt:
+Use case: historical-scene. Asset type: full spherical 360 by 180 degree equirectangular environment texture for Unity VR skybox, exact 2:1 landscape aspect ratio, preferably 4096x2048. Primary request: standing in a quiet open cobbled courtyard surrounded in ALL directions by a period-inspired residential neighbourhood of York, England circa 1870. Warm late-afternoon light after rain, red brick and timber houses, small-paned windows, brick garden walls, leafy gardens, faint chimney haze. An inviting lane leads toward a distant Gothic cathedral in the central forward direction. No people. PROJECTION CRITICAL: true latitude-longitude equirectangular spherical projection, entire 360 horizontal degrees and 180 vertical degrees, horizon exactly at vertical midpoint, upper half predominantly sky with correct zenith pole stretching, lower half cobbled ground with correct nadir pole stretching. Left and right edges must match seamlessly at the same rear-facing direction, consistent architecture, light and ground across seam. Camera center at eye height 1.65m. Not a wide-angle photograph, not a cropped panorama, not a fisheye, not a cube-cross layout. Buildings sufficiently distant for a VR backdrop; empty courtyard immediately around the camera. Natural realistic materials and rich atmospheric depth. Speculative historic reconstruction, not an actual ancestor's documented home. No modern vehicles, electrical wires, modern street furniture, lettering, labels, border or watermark.

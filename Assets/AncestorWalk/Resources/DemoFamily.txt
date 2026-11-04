@@ -1,0 +1,314 @@
+0 HEAD
+1 SOUR ANCESTORWALK_SYNTHETIC_DEMO
+1 NOTE All people, dates and family relationships in this demo are fictional.
+1 GEDC
+2 VERS 7.0
+0 @I1@ INDI
+1 NAME Clara /Hartwell/
+1 BIRT
+2 DATE ABT 1870
+2 PLAC York, England
+1 DEAT
+2 DATE 1941
+2 PLAC Whitby, England
+0 @I2@ INDI
+1 NAME Elias /Hartwell/
+1 BIRT
+2 DATE 1868
+2 PLAC York, England
+1 DEAT
+2 DATE 1936
+2 PLAC Scarborough, England
+0 @I3@ INDI
+1 NAME Rose /Hartwell/
+1 BIRT
+2 DATE 12 MAY 1896
+2 PLAC York, England
+1 DEAT
+2 DATE 1975
+2 PLAC York, England
+0 @F1@ FAM
+1 HUSB @I2@
+1 WIFE @I1@
+1 CHIL @I3@
+0 @I4@ INDI
+1 NAME Arthur /Wren/
+1 BIRT
+2 DATE 5 JUN 1838
+2 PLAC Whitby, England
+1 DEAT
+2 DATE 5 OCT 1904
+2 PLAC Edinburgh, Scotland
+0 @I5@ INDI
+1 NAME Beatrice /Bellamy/
+1 BIRT
+2 DATE 6 JUN 1842
+2 PLAC Valletta, Malta
+1 DEAT
+2 DATE 6 OCT 1909
+2 PLAC York, England
+0 @I6@ INDI
+1 NAME Edmund /Hartwell/
+1 BIRT
+2 DATE 7 JUN 1835
+2 PLAC Bergen, Norway
+1 DEAT
+2 DATE 7 OCT 1903
+2 PLAC Scarborough, England
+0 @I7@ INDI
+1 NAME Leona /Moreau/
+1 BIRT
+2 DATE 8 JUN 1840
+2 PLAC Marseille, France
+1 DEAT
+2 DATE 8 OCT 1909
+2 PLAC Quebec City, Canada
+0 @I8@ INDI
+1 NAME Julian /Wren/
+1 BIRT
+2 DATE 9 JUN 1806
+2 PLAC Trieste, Italy
+1 DEAT
+2 DATE 9 OCT 1876
+2 PLAC Whitby, England
+0 @I9@ INDI
+1 NAME Celeste /Navarro/
+1 BIRT
+2 DATE 10 JUN 1810
+2 PLAC Lisbon, Portugal
+1 DEAT
+2 DATE 10 OCT 1881
+2 PLAC Valletta, Malta
+0 @I10@ INDI
+1 NAME Tobias /Bellamy/
+1 BIRT
+2 DATE 11 JUN 1805
+2 PLAC Prague, Czechia
+1 DEAT
+2 DATE 11 OCT 1877
+2 PLAC Bath, England
+0 @I11@ INDI
+1 NAME Ingrid /Solberg/
+1 BIRT
+2 DATE 12 JUN 1811
+2 PLAC Reykjavik, Iceland
+1 DEAT
+2 DATE 12 OCT 1873
+2 PLAC Bergen, Norway
+0 @I12@ INDI
+1 NAME Silas /Hartwell/
+1 BIRT
+2 DATE 13 JUN 1802
+2 PLAC York, England
+1 DEAT
+2 DATE 13 OCT 1865
+2 PLAC Madeira, Portugal
+0 @I13@ INDI
+1 NAME Amara /Costa/
+1 BIRT
+2 DATE 14 JUN 1808
+2 PLAC Funchal, Madeira
+1 DEAT
+2 DATE 14 OCT 1872
+2 PLAC Lisbon, Portugal
+0 @I14@ INDI
+1 NAME Gabriel /Moreau/
+1 BIRT
+2 DATE 15 JUN 1807
+2 PLAC Avignon, France
+1 DEAT
+2 DATE 15 OCT 1872
+2 PLAC Marseille, France
+0 @I15@ INDI
+1 NAME Hana /Mori/
+1 BIRT
+2 DATE 16 JUN 1813
+2 PLAC Kyoto, Japan
+1 DEAT
+2 DATE 16 OCT 1879
+2 PLAC Nagasaki, Japan
+0 @I16@ INDI
+1 NAME Oliver /Wren/
+1 BIRT
+2 DATE 17 JUN 1774
+2 PLAC Bruges, Belgium
+1 DEAT
+2 DATE 17 OCT 1841
+2 PLAC Trieste, Italy
+0 @I17@ INDI
+1 NAME Elena /Varga/
+1 BIRT
+2 DATE 18 JUN 1778
+2 PLAC Budapest, Hungary
+1 DEAT
+2 DATE 18 OCT 1846
+2 PLAC Vienna, Austria
+0 @I18@ INDI
+1 NAME Mateo /Navarro/
+1 BIRT
+2 DATE 19 JUN 1778
+2 PLAC Toledo, Spain
+1 DEAT
+2 DATE 19 OCT 1847
+2 PLAC Porto, Portugal
+0 @I19@ INDI
+1 NAME Lucia /Rossi/
+1 BIRT
+2 DATE 20 JUN 1782
+2 PLAC Venice, Italy
+1 DEAT
+2 DATE 20 OCT 1852
+2 PLAC Ravenna, Italy
+0 @I20@ INDI
+1 NAME Felix /Bellamy/
+1 BIRT
+2 DATE 21 JUN 1773
+2 PLAC Delft, Netherlands
+1 DEAT
+2 DATE 21 OCT 1844
+2 PLAC Prague, Czechia
+0 @I21@ INDI
+1 NAME Adele /Laurent/
+1 BIRT
+2 DATE 22 JUN 1777
+2 PLAC Lyon, France
+1 DEAT
+2 DATE 22 OCT 1849
+2 PLAC Bordeaux, France
+0 @I22@ INDI
+1 NAME Nils /Solberg/
+1 BIRT
+2 DATE 23 JUN 1779
+2 PLAC Trondheim, Norway
+1 DEAT
+2 DATE 23 OCT 1841
+2 PLAC Tromso, Norway
+0 @I23@ INDI
+1 NAME Freya /Lind/
+1 BIRT
+2 DATE 24 JUN 1783
+2 PLAC Uppsala, Sweden
+1 DEAT
+2 DATE 24 OCT 1846
+2 PLAC Reykjavik, Iceland
+0 @I24@ INDI
+1 NAME Isaac /Hartwell/
+1 BIRT
+2 DATE 25 JUN 1770
+2 PLAC Durham, England
+1 DEAT
+2 DATE 25 OCT 1834
+2 PLAC York, England
+0 @I25@ INDI
+1 NAME Miriam /Reed/
+1 BIRT
+2 DATE 26 JUN 1774
+2 PLAC Stirling, Scotland
+1 DEAT
+2 DATE 26 OCT 1839
+2 PLAC Dublin, Ireland
+0 @I26@ INDI
+1 NAME Rafael /Costa/
+1 BIRT
+2 DATE 27 JUN 1776
+2 PLAC Goa, India
+1 DEAT
+2 DATE 1 OCT 1842
+2 PLAC Funchal, Madeira
+0 @I27@ INDI
+1 NAME Isabel /Almeida/
+1 BIRT
+2 DATE 1 JUN 1780
+2 PLAC Coimbra, Portugal
+1 DEAT
+2 DATE 2 OCT 1847
+2 PLAC Ponta Delgada, Azores
+0 @I28@ INDI
+1 NAME Etienne /Moreau/
+1 BIRT
+2 DATE 2 JUN 1775
+2 PLAC Saint-Malo, France
+1 DEAT
+2 DATE 3 OCT 1843
+2 PLAC Quebec City, Canada
+0 @I29@ INDI
+1 NAME Sofia /Demir/
+1 BIRT
+2 DATE 3 JUN 1779
+2 PLAC Istanbul, Turkey
+1 DEAT
+2 DATE 4 OCT 1848
+2 PLAC Alexandria, Egypt
+0 @I30@ INDI
+1 NAME Kenji /Mori/
+1 BIRT
+2 DATE 4 JUN 1781
+2 PLAC Kanazawa, Japan
+1 DEAT
+2 DATE 5 OCT 1851
+2 PLAC Kyoto, Japan
+0 @I31@ INDI
+1 NAME Aiko /Tanaka/
+1 BIRT
+2 DATE 5 JUN 1785
+2 PLAC Nara, Japan
+1 DEAT
+2 DATE 6 OCT 1856
+2 PLAC Nagasaki, Japan
+0 @F2@ FAM
+1 HUSB @I4@
+1 WIFE @I5@
+1 CHIL @I1@
+0 @F3@ FAM
+1 HUSB @I6@
+1 WIFE @I7@
+1 CHIL @I2@
+0 @F4@ FAM
+1 HUSB @I8@
+1 WIFE @I9@
+1 CHIL @I4@
+0 @F5@ FAM
+1 HUSB @I10@
+1 WIFE @I11@
+1 CHIL @I5@
+0 @F6@ FAM
+1 HUSB @I12@
+1 WIFE @I13@
+1 CHIL @I6@
+0 @F7@ FAM
+1 HUSB @I14@
+1 WIFE @I15@
+1 CHIL @I7@
+0 @F8@ FAM
+1 HUSB @I16@
+1 WIFE @I17@
+1 CHIL @I8@
+0 @F9@ FAM
+1 HUSB @I18@
+1 WIFE @I19@
+1 CHIL @I9@
+0 @F10@ FAM
+1 HUSB @I20@
+1 WIFE @I21@
+1 CHIL @I10@
+0 @F11@ FAM
+1 HUSB @I22@
+1 WIFE @I23@
+1 CHIL @I11@
+0 @F12@ FAM
+1 HUSB @I24@
+1 WIFE @I25@
+1 CHIL @I12@
+0 @F13@ FAM
+1 HUSB @I26@
+1 WIFE @I27@
+1 CHIL @I13@
+0 @F14@ FAM
+1 HUSB @I28@
+1 WIFE @I29@
+1 CHIL @I14@
+0 @F15@ FAM
+1 HUSB @I30@
+1 WIFE @I31@
+1 CHIL @I15@
+0 TRLR

@@ -1,0 +1,556 @@
+{
+  "version": 2,
+  "sceneYear": 2026,
+  "endpoints": [
+    {
+      "personId": "@EURO001@",
+      "year": 1998,
+      "place": "London, England"
+    },
+    {
+      "personId": "@EURO001@",
+      "year": 2026,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO002@",
+      "year": 1970,
+      "place": "London, England"
+    },
+    {
+      "personId": "@EURO002@",
+      "year": 2026,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO003@",
+      "year": 1973,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO003@",
+      "year": 2026,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO004@",
+      "year": 1941,
+      "place": "London, England"
+    },
+    {
+      "personId": "@EURO004@",
+      "year": 2014,
+      "place": "Bath, England"
+    },
+    {
+      "personId": "@EURO005@",
+      "year": 1945,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO005@",
+      "year": 2026,
+      "place": "Bath, England"
+    },
+    {
+      "personId": "@EURO006@",
+      "year": 1944,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO006@",
+      "year": 2011,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO007@",
+      "year": 1948,
+      "place": "Florence, Italy"
+    },
+    {
+      "personId": "@EURO007@",
+      "year": 2026,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO008@",
+      "year": 1912,
+      "place": "York, England"
+    },
+    {
+      "personId": "@EURO008@",
+      "year": 1988,
+      "place": "London, England"
+    },
+    {
+      "personId": "@EURO009@",
+      "year": 1915,
+      "place": "Edinburgh, Scotland"
+    },
+    {
+      "personId": "@EURO009@",
+      "year": 2002,
+      "place": "London, England"
+    },
+    {
+      "personId": "@EURO010@",
+      "year": 1916,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO010@",
+      "year": 1991,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO011@",
+      "year": 1920,
+      "place": "Éguisheim, France"
+    },
+    {
+      "personId": "@EURO011@",
+      "year": 2003,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO012@",
+      "year": 1913,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO012@",
+      "year": 1987,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO013@",
+      "year": 1918,
+      "place": "Giethoorn, Netherlands"
+    },
+    {
+      "personId": "@EURO013@",
+      "year": 1999,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO014@",
+      "year": 1919,
+      "place": "Florence, Italy"
+    },
+    {
+      "personId": "@EURO014@",
+      "year": 1996,
+      "place": "Florence, Italy"
+    },
+    {
+      "personId": "@EURO015@",
+      "year": 1923,
+      "place": "Bellagio, Italy"
+    },
+    {
+      "personId": "@EURO015@",
+      "year": 2008,
+      "place": "Florence, Italy"
+    },
+    {
+      "personId": "@EURO016@",
+      "year": 1880,
+      "place": "Bath, England"
+    },
+    {
+      "personId": "@EURO016@",
+      "year": 1950,
+      "place": "York, England"
+    },
+    {
+      "personId": "@EURO017@",
+      "year": 1884,
+      "place": "Lucerne, Switzerland"
+    },
+    {
+      "personId": "@EURO017@",
+      "year": 1958,
+      "place": "York, England"
+    },
+    {
+      "personId": "@EURO018@",
+      "year": 1852,
+      "place": "Vienna, Austria"
+    },
+    {
+      "personId": "@EURO018@",
+      "year": 1921,
+      "place": "Lucerne, Switzerland"
+    },
+    {
+      "personId": "@EURO019@",
+      "year": 1856,
+      "place": "Český Krumlov, Czechia"
+    },
+    {
+      "personId": "@EURO019@",
+      "year": 1932,
+      "place": "Lucerne, Switzerland"
+    },
+    {
+      "personId": "@EURO020@",
+      "year": 1824,
+      "place": "Prague, Czechia"
+    },
+    {
+      "personId": "@EURO020@",
+      "year": 1895,
+      "place": "Český Krumlov, Czechia"
+    },
+    {
+      "personId": "@EURO021@",
+      "year": 1828,
+      "place": "Szentendre, Hungary"
+    },
+    {
+      "personId": "@EURO021@",
+      "year": 1904,
+      "place": "Český Krumlov, Czechia"
+    },
+    {
+      "personId": "@EURO022@",
+      "year": 1796,
+      "place": "Pest, Hungary"
+    },
+    {
+      "personId": "@EURO022@",
+      "year": 1868,
+      "place": "Szentendre, Hungary"
+    },
+    {
+      "personId": "@EURO023@",
+      "year": 1800,
+      "place": "Rothenburg ob der Tauber, Germany"
+    },
+    {
+      "personId": "@EURO023@",
+      "year": 1874,
+      "place": "Szentendre, Hungary"
+    },
+    {
+      "personId": "@EURO024@",
+      "year": 1768,
+      "place": "Heidelberg, Germany"
+    },
+    {
+      "personId": "@EURO024@",
+      "year": 1840,
+      "place": "Rothenburg ob der Tauber, Germany"
+    },
+    {
+      "personId": "@EURO025@",
+      "year": 1772,
+      "place": "Colmar, France"
+    },
+    {
+      "personId": "@EURO025@",
+      "year": 1847,
+      "place": "Rothenburg ob der Tauber, Germany"
+    },
+    {
+      "personId": "@EURO026@",
+      "year": 1740,
+      "place": "Lyon, France"
+    },
+    {
+      "personId": "@EURO026@",
+      "year": 1811,
+      "place": "Colmar, France"
+    },
+    {
+      "personId": "@EURO027@",
+      "year": 1744,
+      "place": "Vézelay, France"
+    },
+    {
+      "personId": "@EURO027@",
+      "year": 1818,
+      "place": "Colmar, France"
+    },
+    {
+      "personId": "@EURO028@",
+      "year": 1712,
+      "place": "Paris, France"
+    },
+    {
+      "personId": "@EURO028@",
+      "year": 1784,
+      "place": "Vézelay, France"
+    },
+    {
+      "personId": "@EURO029@",
+      "year": 1716,
+      "place": "Lucca, Italy"
+    },
+    {
+      "personId": "@EURO029@",
+      "year": 1788,
+      "place": "Vézelay, France"
+    },
+    {
+      "personId": "@EURO030@",
+      "year": 1684,
+      "place": "Florence, Italy"
+    },
+    {
+      "personId": "@EURO030@",
+      "year": 1754,
+      "place": "Lucca, Italy"
+    },
+    {
+      "personId": "@EURO031@",
+      "year": 1688,
+      "place": "Toledo, Spain"
+    },
+    {
+      "personId": "@EURO031@",
+      "year": 1764,
+      "place": "Lucca, Italy"
+    },
+    {
+      "personId": "@EURO032@",
+      "year": 1656,
+      "place": "Seville, Spain"
+    },
+    {
+      "personId": "@EURO032@",
+      "year": 1724,
+      "place": "Toledo, Spain"
+    },
+    {
+      "personId": "@EURO033@",
+      "year": 1660,
+      "place": "Óbidos, Portugal"
+    },
+    {
+      "personId": "@EURO033@",
+      "year": 1738,
+      "place": "Toledo, Spain"
+    },
+    {
+      "personId": "@EURO034@",
+      "year": 1628,
+      "place": "Lisbon, Portugal"
+    },
+    {
+      "personId": "@EURO034@",
+      "year": 1698,
+      "place": "Óbidos, Portugal"
+    },
+    {
+      "personId": "@EURO035@",
+      "year": 1632,
+      "place": "Visby, Sweden"
+    },
+    {
+      "personId": "@EURO035@",
+      "year": 1709,
+      "place": "Óbidos, Portugal"
+    },
+    {
+      "personId": "@EURO036@",
+      "year": 1600,
+      "place": "Stockholm, Sweden"
+    },
+    {
+      "personId": "@EURO036@",
+      "year": 1670,
+      "place": "Visby, Sweden"
+    },
+    {
+      "personId": "@EURO037@",
+      "year": 1604,
+      "place": "Ribe, Denmark"
+    },
+    {
+      "personId": "@EURO037@",
+      "year": 1678,
+      "place": "Visby, Sweden"
+    }
+  ],
+  "moves": [
+    {
+      "personId": "@EURO001@",
+      "year": 2022,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO002@",
+      "year": 2020,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO003@",
+      "year": 2020,
+      "place": "Amsterdam, Netherlands"
+    },
+    {
+      "personId": "@EURO005@",
+      "year": 1995,
+      "place": "Bath, England"
+    },
+    {
+      "personId": "@EURO007@",
+      "year": 1970,
+      "place": "Paris, France"
+    }
+  ],
+  "portraits": [
+    {
+      "personId": "@EURO001@",
+      "name": "Maya Hartwell",
+      "year": 2026,
+      "place": "Amsterdam, Netherlands",
+      "style": "contemporary color photograph",
+      "prompt": "A single entirely fictional adult woman, age 28, depicted in a contemporary color photograph made in Amsterdam, Netherlands in 2026. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to Amsterdam, Netherlands in 2026. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "a398d7c20f8b8eac67d0caf3c5b17270f5251d6c0f29d3b0ed1026da8fa4b272",
+        "File": "a398d7c20f8b8eac67d0caf3c5b17270f5251d6c0f29d3b0ed1026da8fa4b272.png",
+        "Title": "Maya Hartwell · 2026",
+        "Date": "2026",
+        "Description": "Entirely fictional contemporary color photograph generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO002@",
+      "name": "Elliot Hartwell",
+      "year": 2005,
+      "place": "London, England",
+      "style": "natural color photograph",
+      "prompt": "A single entirely fictional adult man, age 35, depicted in a natural color photograph made in London, England in 2005. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to London, England in 2005. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "2e0e51207d928b6c5b11d0f6a565116d9ab8e3ac67ca35ebdfddd68c47c0f6ab",
+        "File": "2e0e51207d928b6c5b11d0f6a565116d9ab8e3ac67ca35ebdfddd68c47c0f6ab.png",
+        "Title": "Elliot Hartwell · 2005",
+        "Date": "2005",
+        "Description": "Entirely fictional natural color photograph generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO009@",
+      "name": "Clara Whitfield",
+      "year": 1940,
+      "place": "London, England",
+      "style": "1940 black-and-white studio photograph",
+      "prompt": "A single entirely fictional adult woman, age 25, depicted in a 1940 black-and-white studio photograph made in London, England in 1940. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to London, England in 1940. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "b655b9c2731fdb5ec3010c0637970312192bdf5f4889465e81b21895fef7d2e2",
+        "File": "b655b9c2731fdb5ec3010c0637970312192bdf5f4889465e81b21895fef7d2e2.png",
+        "Title": "Clara Whitfield · 1940",
+        "Date": "1940",
+        "Description": "Entirely fictional 1940 black-and-white studio photograph generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO016@",
+      "name": "Arthur Hartwell",
+      "year": 1910,
+      "place": "York, England",
+      "style": "1910 monochrome studio photograph",
+      "prompt": "A single entirely fictional adult man, age 30, depicted in a 1910 monochrome studio photograph made in York, England in 1910. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to York, England in 1910. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "85b6c5d5e9087a5cfc8daeb73c623c12502e06a1cc5ad89c0d3f89fa1948901d",
+        "File": "85b6c5d5e9087a5cfc8daeb73c623c12502e06a1cc5ad89c0d3f89fa1948901d.png",
+        "Title": "Arthur Hartwell · 1910",
+        "Date": "1910",
+        "Description": "Entirely fictional 1910 monochrome studio photograph generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO019@",
+      "name": "Emilia Nováková",
+      "year": 1885,
+      "place": "Lucerne, Switzerland",
+      "style": "1885 albumen studio photograph",
+      "prompt": "A single entirely fictional adult woman, age 29, depicted in a 1885 albumen studio photograph made in Lucerne, Switzerland in 1885. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to Lucerne, Switzerland in 1885. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "293f743b120a596ef0aff435a02f729bbd517c75641164c286ff8c7aee61013a",
+        "File": "293f743b120a596ef0aff435a02f729bbd517c75641164c286ff8c7aee61013a.png",
+        "Title": "Emilia Nováková · 1885",
+        "Date": "1885",
+        "Description": "Entirely fictional 1885 albumen studio photograph generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO020@",
+      "name": "Jan Novák",
+      "year": 1860,
+      "place": "Český Krumlov, Czechia",
+      "style": "1860 early photographic portrait",
+      "prompt": "A single entirely fictional adult man, age 36, depicted in a 1860 early photographic portrait made in Český Krumlov, Czechia in 1860. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to Český Krumlov, Czechia in 1860. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "6bcebe9f6af322b9f740158161270bbc353904bdc5ca47415d8346338aede540",
+        "File": "6bcebe9f6af322b9f740158161270bbc353904bdc5ca47415d8346338aede540.png",
+        "Title": "Jan Novák · 1860",
+        "Date": "1860",
+        "Description": "Entirely fictional 1860 early photographic portrait generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO031@",
+      "name": "Inés Navarro",
+      "year": 1720,
+      "place": "Lucca, Italy",
+      "style": "1720 oil-painted portrait",
+      "prompt": "A single entirely fictional adult woman, age 32, depicted in a 1720 oil-painted portrait made in Lucca, Italy in 1720. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to Lucca, Italy in 1720. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "dbc7d3138781fa32284d47de7bd770ee881d184a76bc103fe317a57e29e45117",
+        "File": "dbc7d3138781fa32284d47de7bd770ee881d184a76bc103fe317a57e29e45117.png",
+        "Title": "Inés Navarro · 1720",
+        "Date": "1720",
+        "Description": "Entirely fictional 1720 oil-painted portrait generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    },
+    {
+      "personId": "@EURO036@",
+      "name": "Lars Lindström",
+      "year": 1640,
+      "place": "Visby, Sweden",
+      "style": "1640 oil-painted portrait",
+      "prompt": "A single entirely fictional adult man, age 40, depicted in a 1640 oil-painted portrait made in Visby, Sweden in 1640. Head and shoulders, face clearly visible, relaxed natural expression, ordinary civilian clothing and hairstyle appropriate to Visby, Sweden in 1640. Simple subdued studio background, centered composition, realistic proportions. Invent a new face; do not depict a real or famous person. No frame, lettering, captions or watermark. Square image.",
+      "photo": {
+        "Id": "e732ab6f325ad740d260031625b584ed538d9f9d477638229a395c469f96140c",
+        "File": "e732ab6f325ad740d260031625b584ed538d9f9d477638229a395c469f96140c.png",
+        "Title": "Lars Lindström · 1640",
+        "Date": "1640",
+        "Description": "Entirely fictional 1640 oil-painted portrait generated with Meta Muse Image.",
+        "Width": 1600,
+        "Height": 1600,
+        "Orientation": 1
+      }
+    }
+  ],
+  "omittedScenes": [
+    {
+      "personId": "@EURO005@",
+      "year": 1945,
+      "reason": "Left empty at the owner's request after a Meta refusal."
+    }
+  ]
+}

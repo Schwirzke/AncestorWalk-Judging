@@ -1,0 +1,5 @@
+SamMask.cs contains a bounded C# port of the one_bit codec from meta_sam_parser.
+Copyright (c) Meta Platforms, Inc. and affiliates. All Rights Reserved.
+Modified for Unity: fixed allocation limits, whole-response parsing and mask extraction.
+Upstream: https://github.com/meta-models/meta-sam
+Distributed under the accompanying SAM License. No model weights are included.

@@ -1,0 +1,59 @@
+Ancestor Walk — Proprietary Evaluation License
+Version 1.0, November 2, 2026
+
+Copyright (c) 2026 the respective Ancestor Walk copyright holders.
+All rights reserved except as expressly granted below.
+
+1. Scope
+
+This license applies to original Ancestor Walk source code, documentation and
+other materials supplied with this license (the "Materials"), to the extent
+the licensors own the applicable rights. This is a proprietary, evaluation-only
+license, not an open-source license.
+
+2. Hackathon evaluation permission
+
+Meta, Cerebral Valley, and their authorized judges, staff and contractors for
+the Meta Global AI Developer Hackathon 2026 may access, download, clone, inspect,
+build, execute and test the Materials solely to administer, evaluate and judge
+the Ancestor Walk entry. They may make local modifications needed to build or
+test it and share copies within that authorized evaluation team for those
+purposes. This permission is worldwide, non-exclusive and royalty-free and
+continues through official judging, any extensions and related review or appeals.
+One archival copy may be retained afterward solely for competition records or
+legal compliance, without ongoing operational use.
+
+Preserve this license and applicable copyright and third-party notices in copies.
+Evaluators must obtain their own required third-party tools, accounts and API
+credentials; this license grants no access to the owner's credentials or services.
+
+3. Reserved rights
+
+No permission is granted for public redistribution, sublicensing, sale,
+commercial exploitation, production deployment, or reuse of the Materials or
+modified versions in another product or service. No general noncommercial-use
+permission is granted. Uses outside section 2 require separate written permission
+from the applicable copyright holder. Evaluation by a commercial organization
+under section 2 is permitted and is not prohibited commercial exploitation.
+
+If the Materials are made publicly accessible, that visibility alone does not
+expand this license. Nothing here limits rights that applicable law independently
+provides or hosting-platform rights separately granted by the copyright holder.
+This license does not itself authorize publication or change repository access.
+
+4. Third-party materials and separate agreements
+
+Third-party components, packages, models and assets remain governed by their
+own licenses and notices; this license neither replaces nor restricts those
+permissions. It grants no rights to personal family records, photographs or
+other private data, nor any trademark or endorsement rights. Separately accepted
+competition terms or other written agreements remain effective according to
+their own terms; this license does not amend them.
+
+5. Warranty and liability
+
+To the maximum extent permitted by applicable law, the Materials are provided
+"as is", without warranties, including merchantability, fitness for a particular
+purpose or non-infringement. The licensors are not liable for losses or damages
+arising from use of the Materials. Nothing excludes liability that applicable
+law does not allow to be excluded.
