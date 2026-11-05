@@ -25,7 +25,9 @@ saved scenes work without an API key. Use **Copy demo to edit** for live tests.
 For live AI, enter your own Meta Model API key in **Settings → Scenes → AI Setup**.
 AI Setup opens at startup without a valid session key; close it to browse saved
 scenes. It opens again when an AI action needs a key. Quest starts in full VR;
-passthrough is available from the room toggle.
+passthrough is available from the room toggle. The VR API panel includes an
+attached keyboard with Shift, symbols, caret movement, correction and reveal controls.
+Quest uses Unity Activity for native keyboard compatibility in other text fields.
 Requests use HTTPS directly from Unity. The key is session-only. No credentials,
 private family archives, private photographs, author scene caches, local backend,
 or development Git history are supplied. Optional developer helper source and

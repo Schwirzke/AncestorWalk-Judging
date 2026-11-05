@@ -89,11 +89,17 @@ the independent copy retains the demo's scenes, portraits and dated moves.
 1. Have a Meta Model API key with access to the models below and available quota.
    A normal Meta/Quest account alone does not establish model API access.
 2. AI Setup opens at startup and when an AI action needs a valid key. You can
-   also open **Settings → Scenes → AI Setup**. Select the masked entry to open
-   the Quest keyboard, then type or paste the key,
+   also open **Settings → Scenes → AI Setup**. Use the attached keyboard in VR, or type/paste on desktop,
    then choose **Test & use key**. This checks the model catalog; it does not
    generate an image. Successful catalog access does not guarantee every model's
    availability or remaining generation quota.
+   In VR, the keyboard sits directly beneath the form at 1.2 metres. The number
+   row stays numeric with **Shift** on; symbols have a separate row. Use **Shift**
+   for uppercase, **Left/Right** for the caret, and **Backspace/Clear** to correct.
+   Keys highlight on hover and flash on tap. The eye button reveals or masks text.
+   Failed validation retains your entry for correction; success activates the
+   session key and clears the entry. **Passthrough / Full VR** changes the view
+   temporarily; closing setup restores the previous viewing mode.
 3. Use **Test current key** to check the session, or **Forget key** after AI work
    has finished. The key lasts only for this app/Play session and is not saved in
    assets, builds, PlayerPrefs, scene caches or logs. Closing the panel clears
