@@ -9,7 +9,7 @@ copied. It has not been published by this preparation step.
 - Unity application source, project/package settings and required assets.
 - Fictional GEDCOM examples, 74 fictional-family historical panoramas and eight
   generated fictional portraits, with provenance and verified image hashes.
-- Setup instructions, the evaluation-only license and third-party notices.
+- Setup instructions, the MIT license and third-party notices.
 - Existing synthetic tests; the private-family import test harness is excluded.
 
 ## Excluded

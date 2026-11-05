@@ -59,8 +59,8 @@ data, photographs, generated personal caches or API credentials.
 
 ## License and notices
 
-This is a judging snapshot under the [Proprietary Evaluation License](LICENSE),
-not an open-source license. Public visibility does not grant general reuse rights.
+The original source code and associated documentation in this judging snapshot
+are available under the [MIT License](LICENSE).
 Third-party licenses remain applicable. Preserve the font notices under Assets
 and the [SAM codec notice](Docs/ThirdParty/MetaSam-NOTICE.txt) and its accompanying
 license. Unity packages are restored according to Packages/manifest.json and
