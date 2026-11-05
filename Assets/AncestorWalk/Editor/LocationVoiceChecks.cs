@@ -13,6 +13,12 @@ namespace AncestorWalk.Editor
         public static string Data()
         {
             int n=0;void Check(bool ok,string why){if(!ok)throw new Exception(why);n++;}
+            var pause=new SpeechPauseDetector();pause.Reset();
+            pause.Observe(new[]{0f,0f},10);Check(!pause.Finished(12),"Initial silence waits for speech");
+            pause.Observe(new[]{.02f,-.02f},12);Check(!pause.Finished(13.4f),"Brief speech pause keeps recording");
+            pause.Observe(new[]{.02f,-.02f},13.4f);Check(!pause.Finished(14.8f),"Resumed speech restarts the pause timer");
+            pause.Observe(new[]{.001f,-.001f},14.9f);Check(pause.Finished(15),"Quiet background does not prevent automatic finish");
+            pause.Reset();Check(!pause.Finished(100),"A new recording forgets the preceding speech");
             Check(LocationVoiceInput.Place("  München,   Germany. ")=="München, Germany","Place normalization preserves Unicode");
             foreach(string text in new[]{"",new string('x',ResidenceTimeline.MaximumLocationLength+1),"Paris\0France"}){bool bad=false;try{LocationVoiceInput.Place(text);}catch(InvalidOperationException){bad=true;}Check(bad,"Invalid place rejected");}
             Check(LocationVoiceInput.Place(new string('x',1000)).Length==1000,"Long location descriptions accepted");

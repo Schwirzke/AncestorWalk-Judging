@@ -129,7 +129,8 @@ not dependencies of this judging journey.
 1. Choose **Copy demo to edit**, return to Clara, enter her scene and select **1940**.
    This year is a new live test, not one of her two bundled endpoints.
 2. Open **Edit Location** from the scene timeline. Type **Covent Garden, London**,
-   or tap the Location microphone, speak those words and tap it again to finish.
+   or tap the Location microphone, speak those words and pause for 1.5 seconds
+   to finish automatically. Tap again to finish sooner; Scene details works the same way.
    Review the transcription before continuing. Scene details are optional.
 3. Choose **Generate**. Keep the selected tree open while research, generation
    and saving finish. Inspect the actual returned scene; output and timing vary.
@@ -138,7 +139,8 @@ not dependencies of this judging journey.
    model request. Different-year reference editing is currently disabled.
 5. Open **Ask** and type “What would everyday life have been like around here in
    1940?” then select Ask. Alternatively tap its microphone, speak the question,
-   and tap again to finish and send. Read the returned text. Changing the year or
+   and pause for 1.5 seconds to finish and send (or tap again to finish sooner).
+   Read the returned text. Changing the year or
    leaving the scene cancels the active question. Audio playback and visible
    citation controls are not part of this walkthrough.
 6. Return to a completed saved year to reuse its scene without regenerating it.

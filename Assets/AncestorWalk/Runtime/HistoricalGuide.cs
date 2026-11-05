@@ -31,6 +31,7 @@ namespace AncestorWalk
         public const int MaximumSeconds=30;
         AncestorGallery gallery; Person person; GuideQuestion context;
         AudioClip clip; string device; float started; int version;
+        float[] meter;readonly SpeechPauseDetector speechPause=new SpeechPauseDetector();
         UnityWebRequest activeRequest;
         IEnumerator operation;
         SceneServiceConnection connection;
@@ -84,17 +85,20 @@ namespace AncestorWalk
                 if(Microphone.devices.Length==0)throw new InvalidOperationException("No microphone found. Connect one and try again.");
                 device=Microphone.devices[0];clip=Microphone.Start(device,false,MaximumSeconds+1,24000);
                 if(clip==null)throw new InvalidOperationException("Could not start the microphone.");
-                Recording=true;started=Time.realtimeSinceStartup;
+                meter=new float[1024*clip.channels];speechPause.Reset();Recording=true;started=Time.realtimeSinceStartup;
             }
             catch(Exception){error="Could not start the microphone. Check the device and system permission.";}
             if(error!=null){ReleaseMicrophone();Busy=false;Notify(error);yield break;}
-            Notify("Listening… tap the microphone again to send (30 seconds maximum).");
+            Notify(SpeechPauseDetector.ListeningMessage);
         }
         void Update()
         {
             if(context!=null&&(gallery.SelectedId!=person.Id||gallery.Year(person.Id)!=context.year||gallery.Place(person.Id)!=context.place))
             {Cancel();Answer=null;context=null;Notify("Time or place changed. Ask a new question for this selection.");}
-            if(Recording&&Time.realtimeSinceStartup-started>=MaximumSeconds)SendRecording();
+            if(!Recording)return;
+            int frames=Microphone.GetPosition(device);
+            if(frames>=1024&&clip.GetData(meter,frames-1024))speechPause.Observe(meter,Time.realtimeSinceStartup);
+            if(Time.realtimeSinceStartup-started>=MaximumSeconds||speechPause.Finished(Time.realtimeSinceStartup))SendRecording();
         }
         public void SendRecording()
         {
@@ -186,7 +190,7 @@ namespace AncestorWalk
             return true;
         }
         public static bool SafeUrl(string url)=>url!=null&&url.Length<=2048&&Uri.TryCreate(url,UriKind.Absolute,out var uri)&&(uri.Scheme=="https"||uri.Scheme=="http")&&!string.IsNullOrEmpty(uri.Host)&&string.IsNullOrEmpty(uri.UserInfo);
-        void ReleaseMicrophone(){if(clip!=null){Microphone.End(device);Destroy(clip);clip=null;}Recording=false;}
+        void ReleaseMicrophone(){if(clip!=null){Microphone.End(device);Destroy(clip);clip=null;}meter=null;Recording=false;}
         public void Cancel()
         {
             ++version;

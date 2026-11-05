@@ -114,7 +114,7 @@ namespace AncestorWalk
             photoLabel=Text("Add photo to scene",new Vector3(-.58f,-1.25f,0),.029f);
             Button("CHOOSE PHOTO","photo-pick",new Vector3(1.02f,-1.25f,0),1.32f);
             Button("GENERATE","save",new Vector3(-1.35f,-1.55f,0),.8f);Button("REMOVE ENTRY","remove",new Vector3(-.25f,-1.55f,0),1.25f);Button("CANCEL","cancel",new Vector3(1.05f,-1.55f,0),1f);
-            message=Text("1,000 characters per field · Ctrl/Cmd+Enter: Generate · Esc: Cancel",new Vector3(0,-1.88f,0),.027f);RefreshVoiceButtons();RefreshPhoto();
+            message=Text("Mic: speak, then pause 1.5s to send · Tap again to finish sooner\n1,000 characters per field · Ctrl/Cmd+Enter: Generate · Esc: Cancel",new Vector3(0,-1.88f,0),.027f);RefreshVoiceButtons();RefreshPhoto();
             panelColliders=panel.GetComponentsInChildren<Collider>();Physics.SyncTransforms();
             // Saved-entry browsing is temporarily hidden; entries remain available on the timeline.
         }

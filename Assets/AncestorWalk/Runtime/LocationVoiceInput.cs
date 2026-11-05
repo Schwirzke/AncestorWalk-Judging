@@ -8,6 +8,21 @@ using UnityEngine.Networking;
 
 namespace AncestorWalk
 {
+    // Shared by dictation and the guide so every microphone finishes the same way.
+    public sealed class SpeechPauseDetector
+    {
+        public const float PauseSeconds=1.5f;
+        public const string ListeningMessage="Listening… pause 1.5 seconds to send, or tap the mic again.";
+        bool heardSpeech;float lastSpeech;
+        public void Reset(){heardSpeech=false;lastSpeech=0;}
+        public void Observe(float[] samples,float now)
+        {
+            if(samples==null||samples.Length==0)return;
+            double power=0;foreach(float sample in samples)power+=sample*sample;
+            if(Math.Sqrt(power/samples.Length)>.006){heardSpeech=true;lastSpeech=now;}
+        }
+        public bool Finished(float now)=>heardSpeech&&now-lastSpeech>=PauseSeconds;
+    }
     [Serializable] public sealed class LocationSpeechRequest {public string requestId,purpose,audio;}
     [Serializable] public sealed class LocationSpeechResult {public string requestId,purpose,text,error,transcriptionModel;}
     public sealed class LocationVoiceInput : MonoBehaviour
@@ -16,7 +31,8 @@ namespace AncestorWalk
         public bool Recording{get;private set;}public bool Busy{get;private set;}
         public string Purpose{get;private set;}public string Status{get;private set;}="";
         public event Action Changed;public event Action<string,string> Recognized;
-        AudioClip clip;string device;float started,lastSpeech;bool heardSpeech;float[] meter;int version;
+        AudioClip clip;string device;float started;float[] meter;int version;
+        readonly SpeechPauseDetector speechPause=new SpeechPauseDetector();
         UnityWebRequest active;SceneServiceConnection connection;
         IEnumerator operation;
         void Notify(string text){Status=text;Changed?.Invoke();}
@@ -60,20 +76,17 @@ namespace AncestorWalk
             {
                 if(Microphone.devices.Length==0)throw new InvalidOperationException();
                 device=Microphone.devices[0];clip=Microphone.Start(device,false,MaximumSeconds+1,24000);if(clip==null)throw new InvalidOperationException();
-                meter=new float[1024*clip.channels];Recording=true;heardSpeech=false;started=lastSpeech=Time.realtimeSinceStartup;
+                meter=new float[1024*clip.channels];Recording=true;speechPause.Reset();started=Time.realtimeSinceStartup;
             }
             catch{ReleaseMicrophone();Busy=false;Notify("Could not start the microphone. You can still type the location.");yield break;}
-            Notify("Listening… speak, then pause or tap the microphone again.");
+            Notify(SpeechPauseDetector.ListeningMessage);
         }
         void Update()
         {
             if(!Recording)return;int frames=Microphone.GetPosition(device);
             if(frames>=1024&&clip.GetData(meter,frames-1024))
-            {
-                double power=0;foreach(float sample in meter)power+=sample*sample;
-                if(Math.Sqrt(power/meter.Length)>.006){heardSpeech=true;lastSpeech=Time.realtimeSinceStartup;}
-            }
-            if(Time.realtimeSinceStartup-started>=MaximumSeconds||heardSpeech&&Time.realtimeSinceStartup-lastSpeech>=1.1f)FinishRecording();
+                speechPause.Observe(meter,Time.realtimeSinceStartup);
+            if(Time.realtimeSinceStartup-started>=MaximumSeconds||speechPause.Finished(Time.realtimeSinceStartup))FinishRecording();
         }
         public void FinishRecording()
         {
@@ -90,7 +103,7 @@ namespace AncestorWalk
         IEnumerator Transcribe(LocationSpeechRequest body,int token)
         {
             if(connection==null){yield return MetaApi.Guard(TranscribeDirect(body,token),()=>{Busy=false;active=null;Notify("Meta transcription interrupted. Please record again.");});yield break;}
-            Notify("Transcribing location…");
+            Notify("Transcribing…");
             using(var request=new UnityWebRequest(connection.url+"/location-speech","POST"))
             try
             {
@@ -106,7 +119,7 @@ namespace AncestorWalk
         }
         IEnumerator TranscribeDirect(LocationSpeechRequest body,int token)
         {
-            Notify("Transcribing location…");string text=null,error=null;byte[] wav=Convert.FromBase64String(body.audio);body.audio=null;
+            Notify("Transcribing…");string text=null,error=null;byte[] wav=Convert.FromBase64String(body.audio);body.audio=null;
             yield return MetaApi.Transcribe(wav,(value,failure)=>{text=value;error=failure;},request=>active=request);wav=null;
             if(token!=version)yield break;Busy=false;
             if(error!=null){Notify(error);yield break;}

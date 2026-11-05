@@ -56,9 +56,9 @@ namespace AncestorWalk
             var mic=(RectTransform)guideRecord.transform.parent;guideMicrophoneBackground=mic.GetComponent<Image>();
             guideMicrophone=Rect("Microphone icon",mic,Vector2.zero,new Vector2(32,32)).gameObject.AddComponent<RecordingGraphic>();guideMicrophone.raycastTarget=false;guideMicrophone.color=Color.white;
             guideWave=Rect("Listening waveform",guidePanel,new Vector2(0,88),new Vector2(140,18)).gameObject.AddComponent<RecordingGraphic>();guideWave.waveform=true;guideWave.raycastTarget=false;guideWave.color=Color.white;guideWave.gameObject.SetActive(false);
-            gallery.Hud?.Register(mic,"Record question · tap again to send");
+            gallery.Hud?.Register(mic,"Record question · pause 1.5s to send · tap again to finish sooner");
             guideMode=Button(guidePanel,"SOURCES",new Vector2(264,-153),new Vector2(200,38),()=>{guideShowSources=!guideShowSources;guidePageIndex=0;RefreshGuide();});
-            Label(guidePanel,"Tap mic to record; tap again to send to Meta · 30 seconds maximum · Close cancels",new Vector2(0,-187),new Vector2(790,22),12);
+            Label(guidePanel,"Tap mic, speak, then pause 1.5s to send · Tap again to finish sooner · 30s max · Close cancels",new Vector2(0,-187),new Vector2(790,22),12);
             guide.Changed+=RefreshGuide;guideMode.transform.parent.gameObject.SetActive(false);citationIcon.transform.parent.gameObject.SetActive(false);guidePanel.gameObject.SetActive(false);
         }
         public void OpenGuide(){RestorePanelUI();infoOpen=false;timelineOpen=false;UIFade.Set(guidePanel.gameObject,true);guidePanel.SetAsLastSibling();Apply(false);RefreshGuide();}
