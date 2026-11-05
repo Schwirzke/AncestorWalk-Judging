@@ -122,7 +122,7 @@ namespace AncestorWalk
             ConfigureGuideComfort(vr);
         }
         bool CanShow=>!NavigationPreferences.PanelOpen&&!(gallery.Library?.IsOpen??false)&&!(gallery.AISetup?.IsOpen??false)&&!(gallery.Batch?.IsOpen??false)&&!(gallery.Tutorial?.IsOpen??false)&&(gallery.LocationEditor==null||!gallery.LocationEditor.IsOpen);
-        void Update(){Configure();UIFade.Set(canvas,CanShow);Refresh();}
+        void Update(){Configure();UIFade.Set(canvas,CanShow);Refresh();RefreshGuideProcessing();}
         void LateUpdate()
         {
             gallery.ScenePlaceWeights(placeWeights);

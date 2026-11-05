@@ -11,7 +11,7 @@ namespace AncestorWalk
     {
         RectTransform guidePanel;InputField guideInput;readonly Dictionary<GameObject,bool> guideHidden=new();
         HistoricalGuide guide;
-        Text guideHeading,guideQuestion,guideBody,guideStatus,guideRecord,guidePage,guideMode;
+        Text guideHeading,guideQuestion,guideBody,guideStatus,guideRecord,guidePage,guideMode,guideProcessing;
         Image guideMicrophoneBackground;RecordingGraphic guideMicrophone,guideWave;
         readonly List<string> guidePages=new();
         readonly Text[] guideSources=new Text[3];
@@ -49,6 +49,8 @@ namespace AncestorWalk
                 label.fontSize=16;label.supportRichText=false;guideSources[i]=label;
             }
             guideStatus=Label(guidePanel,"",new Vector2(0,-102),new Vector2(752,42),14);guideStatus.supportRichText=false;
+            guideProcessing=Label(guidePanel,"",new Vector2(368,-102),new Vector2(32,42),18);
+            guideProcessing.alignment=TextAnchor.MiddleLeft;guideProcessing.raycastTarget=false;guideProcessing.gameObject.SetActive(false);
             Button(guidePanel,"‹",new Vector2(-350,-153),new Vector2(52,36),()=>{guidePageIndex=Math.Max(0,guidePageIndex-1);RefreshGuide();});
             guidePage=Label(guidePanel,"",new Vector2(-270,-153),new Vector2(100,36),14);
             Button(guidePanel,"›",new Vector2(-190,-153),new Vector2(52,36),()=>{guidePageIndex=Math.Min(GuidePageCount-1,guidePageIndex+1);RefreshGuide();});
@@ -145,10 +147,24 @@ namespace AncestorWalk
                 if(visible){var source=answer.sources[index];guideSources[i].text="["+(index+1)+"] "+source.title+"\n"+new Uri(source.url).Host;}
             }
             guideStatus.text=guide.Status;
+            RefreshGuideProcessing();
             guideMicrophone.color=guide.Busy&&!guide.Recording?Color.gray:Color.white;
             guideMicrophoneBackground.color=guide.Recording?new Color(.30f,.13f,.16f):guide.Busy?new Color(.12f,.15f,.16f):new Color(.08f,.25f,.28f);
             guideWave.gameObject.SetActive(GuideOpen&&guide.Recording);
             guidePage.text=(guidePageIndex+1)+" / "+GuidePageCount;guideMode.text=guideShowSources?"ANSWER":"SOURCES ("+(answer?.sources.Length??0)+")";
+        }
+        void RefreshGuideProcessing()
+        {
+            if(guideProcessing==null)return;
+            bool processing=GuideOpen&&guide.Busy&&!guide.Recording;
+            guideProcessing.gameObject.SetActive(processing);
+            float width=wasVr?680:752;
+            guideStatus.rectTransform.sizeDelta=new Vector2(processing?width-48:width,42);
+            if(!processing)return;
+            // Animate independently of network progress, including the final response wait.
+            guideProcessing.text=new string('.',1+(int)(Time.unscaledTime*3)%3);
+            float right=Mathf.Min(guideStatus.preferredWidth,guideStatus.rectTransform.sizeDelta.x)*.5f;
+            guideProcessing.rectTransform.anchoredPosition=new Vector2(right+24,-102);
         }
         void OpenGuideSource(int slot)
         {
